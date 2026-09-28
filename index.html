@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Braza 47 - Restauration Portugaise à Tonneins</title>
+<meta name="description" content="Braza 47, restauration portugaise à Tonneins. Poulet mariné, sauce maison, accueil sympathique. Ouvert du lundi au dimanche. Commandez au 06 29 80 21 79.">
+<meta name="keywords" content="restaurant portugais Tonneins, cuisine portugaise Tonneins, spécialités à la braise Tonneins, restaurant convivial Tonneins, repas portugais Lot-et-Garonne, Braza 47 Tonneins">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #B85C38;
+    --secondary: #6B7A3A;
+    --background: #FBF3E4;
+    --text: #3A2A1E;
+    --cta: #D98E2B;
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'Jost', sans-serif;
+    --radius: 12px;
+    --shadow-soft: 0 8px 32px rgba(58,42,30,0.10), 0 2px 8px rgba(58,42,30,0.07);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(251,243,228,0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(184,92,56,0.12);
+    box-shadow: 0 2px 12px rgba(58,42,30,0.07);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: relative;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+    flex-shrink: 0;
+  }
+
+  .nav-logo span {
+    color: var(--secondary);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav ul li a:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+
+  .nav-cta-link {
+    background: var(--cta);
+    color: #fff !important;
+    padding: 0.5rem 1.1rem !important;
+    border-radius: var(--radius) !important;
+    border-bottom: none !important;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta-link:hover {
+    background: var(--primary) !important;
+    transform: translateY(-1px);
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.4rem;
+    z-index: 1100;
+  }
+
+  .burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* Mobile nav */
+  @media (max-width: 767px) {
+    .burger { display: flex; }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 64px;
+      left: 0; right: 0;
+      background: rgba(251,243,228,0.99);
+      padding: 1.5rem 1.25rem 2rem;
+      gap: 0.5rem;
+      border-bottom: 2px solid rgba(184,92,56,0.15);
+      box-shadow: 0 8px 24px rgba(58,42,30,0.10);
+    }
+
+    nav ul.open {
+      display: flex;
+    }
+
+    nav ul li a {
+      font-size: 1.05rem;
+      padding: 0.6rem 0;
+      display: block;
+      border-bottom: 1px solid rgba(184,92,56,0.10);
+    }
+
+    .nav-cta-link {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    nav ul {
+      display: flex !important;
+      flex-direction: row;
+      position: static;
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      border: none;
+    }
+  }
+
+  /* ===== BUTTONS ===== */
+  .cta {
+    display: inline-block;
+    background: var(--cta);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(217,142,43,0.25);
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+
+  .cta:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(184,92,56,0.30);
+  }
+
+  .cta-outline {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    border: 2px solid rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-outline:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section {
+    padding: 5rem 1.25rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .section-text {
+    font-size: 1.05rem;
+    color: var(--text);
+    opacity: 0.85;
+    max-width: 640px;
+  }
+
+  /* ===== FADE IN ANIMATION ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== HERO ===== */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1.25rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(58,42,30,0.62) 0%, rgba(184,92,56,0.38) 60%, rgba(107,122,58,0.28) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(217,142,43,0.22);
+    border: 1px solid rgba(217,142,43,0.55);
+    color: #F5D89A;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    color: #fff;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 16px rgba(58,42,30,0.35);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    color: #F5D89A;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+    font-family: var(--font-heading);
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 2.25rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.75;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== ABOUT ===== */
+  #apropos {
+    background: #fff;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: visible;
+  }
+
+  .about-img-wrap img {
+    border-radius: var(--radius);
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* corner_frame decoration */
+  .corner-frame {
+    position: relative;
+  }
+
+  .corner-frame::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    width: 80px;
+    height: 80px;
+    border-top: 3px solid var(--cta);
+    border-left: 3px solid var(--cta);
+    border-radius: 4px 0 0 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .corner-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    width: 80px;
+    height: 80px;
+    border-bottom: 3px solid var(--secondary);
+    border-right: 3px solid var(--secondary);
+    border-radius: 0 0 4px 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .about-text-block .section-text {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .about-tag {
+    background: var(--background);
+    border: 1px solid rgba(184,92,56,0.2);
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .about-img-wrap img {
+      height: 420px;
+    }
+  }
+
+  /* ===== FEATURED MENU ===== */
+  #specialites {
+    background: var(--background);
+  }
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .menu-header .section-text {
+    margin: 0 auto;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  @media (min-width: 600px) {
+    .menu-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .menu-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2rem 1.75rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(58,42,30,0.13);
+  }
+
+  .menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary), var(--cta));
+    border-radius: 4px 0 0 4px;
+  }
+
+  .menu-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .menu-card h3 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-card p {
+    font-size: 0.95rem;
+    color: var(--text);
+    opacity: 0.8;
+  }
+
+  /* ===== REVIEWS ===== */
+  #avis {
+    background: #fff;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: var(--background);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem 2rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+  }
+
+  /* big_quote style */
+  .review-card::before {
+    content: '\201C';
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    color: var(--cta);
+    opacity: 0.25;
+    position: absolute;
+    top: -0.5rem;
+    left: 1.25rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 1rem;
+  }
+
+  .star {
+    color: var(--cta);
+    font-size: 1.1rem;
+  }
+
+  .star.empty {
+    color: #ddd;
+  }
+
+  .review-quote {
+    font-size: 0.98rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 1;
+    white-space: pre-line;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--cta));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .review-meta strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .review-meta span {
+    font-size: 0.82rem;
+    color: var(--text);
+    opacity: 0.55;
+  }
+
+  /* ===== GALLERY CAROUSEL ===== */
+  #galerie {
+    background: var(--background);
+    overflow: hidden;
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .carousel-wrap {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    flex: 0 0 calc(100% - 0px);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-slide.corner-frame::before {
+    top: -10px;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-slide.corner-frame::after {
+    bottom: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    box-shadow: var(--shadow-soft);
+  }
+
+  @media (min-width: 768px) {
+    .carousel-slide {
+      flex: 0 0 calc(50% - 0.625rem);
+    }
+    .carousel-slide img {
+      height: 380px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carousel-slide img {
+      height: 420px;
+    }
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .carousel-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(184,92,56,0.25);
+  }
+
+  .carousel-btn:hover {
+    background: var(--cta);
+    transform: scale(1.08);
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(184,92,56,0.25);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .carousel-dot.active {
+    background: var(--primary);
+    transform: scale(1.3);
+  }
+
+  /* ===== HOURS & LOCATION ===== */
+  #horaires {
+    background: #fff;
+  }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .hours-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .hours-block h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .hours-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hours-table tr {
+    border-bottom: 1px solid rgba(184,92,56,0.10);
+  }
+
+  .hours-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .hours-table td {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hours-table td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+    width: 40%;
+  }
+
+  .hours-table td:last-child {
+    color: var(--text);
+    opacity: 0.85;
+  }
+
+  .address-block {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--background);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--cta);
+  }
+
+  .address-block p {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .address-block a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .map-wrap {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    height: 320px;
+  }
+
+  .map-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ===== CONTACT FORM ===== */
+  #contact {
+    background: var(--background);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1.4fr;
+    }
+  }
+
+  .contact-info h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .contact-info p {
+    font-size: 0.97rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-detail-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--secondary);
+    margin-bottom: 0.15rem;
+  }
+
+  .contact-detail-text span {
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .contact-form-wrap {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 2.25rem 2rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .contact-form-wrap h3 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid rgba(184,92,56,0.2);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.97rem;
+    color: var(--text);
+    background: var(--background);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(184,92,56,0.10);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .form-submit {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 1rem;
+  }
+
+  /* ===== TRUST SIGNALS ===== */
+  #confiance {
+    background: linear-gradient(135deg, var(--primary) 0%, #8B3A1E 100%);
+    color: #fff;
+    padding: 4rem 1.25rem;
+  }
+
+  .trust-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .trust-header .section-title {
+    color: #fff;
+  }
+
+  .trust-header .section-label {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .trust-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .trust-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .trust-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255,255,255,0.10);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .trust-item:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-3px);
+  }
+
+  .trust-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .trust-item p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.85);
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1.5fr 1fr 1fr;
+    }
+  }
+
+  .footer-brand .nav-logo {
+    font-size: 1.5rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.75;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+
+  .footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--cta);
+  }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.10);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.82rem;
+    opacity: 0.55;
+  }
+
+  .footer-bottom a {
+    font-size: 0.82rem;
+    opacity: 0.55;
+    transition: opacity 0.2s;
+  }
+
+  .footer-bottom a:hover {
+    opacity: 1;
+  }
+
+  .footer-cta {
+    margin-top: 1.25rem;
+  }
+
+  /* ===== PHONE LINK ===== */
+  .phone-link {
+    color: var(--cta);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .phone-link:hover {
+    color: var(--primary);
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--cta));
+    border-radius: 2px;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .divider-center {
+    margin: 1rem auto 1.5rem;
+  }
+
+  /* ===== SCROLL TOP ===== */
+  #scrollTop {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(184,92,56,0.35);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  #scrollTop:hover {
+    background: var(--cta);
+    transform: translateY(-2px);
+  }
+
+  #scrollTop.show {
+    display: flex;
+  }
+
+/* ── GARDE-FOU NAV (post-traitement deterministe, pas le LLM) ────────────────
+   Le modele produit typiquement `nav ul.open { flex-direction:column }` SANS
+   media query. Sa specificite (0,2,1) bat la regle desktop `nav ul` (0,0,2)
+   quand celle-ci n'a pas !important sur flex-direction : au retour en desktop
+   apres ouverture du burger, le menu reste empile en colonne (menu casse).
+   Cette regle force l'etat desktop quel que soit l'etat de .open. */
+@media (min-width: 768px) {
+  nav ul, nav ul.open, nav.open ul, nav ul[data-open="true"] {
+    flex-direction: row !important;
+    position: static !important;
+    display: flex !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    width: auto !important;
+  }
+  .burger, button.burger, .nav-toggle, #burger, .burger-menu { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Braza <span>47</span></a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu" role="list">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#specialites">Spécialités</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#contact" class="nav-cta-link cta">Nous contacter</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" aria-label="Accueil Braza 47">
+  <div class="hero-bg" role="img" aria-label="Poulet portugais grillé à la braise chez Braza 47"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content fade-in">
+    <div class="hero-badge">Restaurant Portugais · Tonneins</div>
+    <h1 class="hero-title">Braza 47<br>Restauration Portugaise</h1>
+    <p class="hero-subtitle">Le bon poulet portugais à Tonneins</p>
+    <p class="hero-text">Braza 47 vous accueille au 3 Rue Marcel Prévost, à Tonneins. Une restauration portugaise conviviale, avec un poulet mariné, une sauce faite maison et une peau croustillante.</p>
+    <div class="hero-btns">
+      <a href="tel:+33629802179" class="cta" aria-label="Appelez-nous au 06 29 80 21 79">Appelez-nous</a>
+      <a href="#specialites" class="cta-outline" aria-label="Voir nos spécialités">Voir la carte</a>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" aria-label="À propos de Braza 47">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap corner-frame fade-in">
+        <img src="assets/gallery-1.jpg" alt="Ambiance chaleureuse chez Braza 47, restaurant portugais à Tonneins" loading="lazy">
+      </div>
+      <div class="about-text-block fade-in">
+        <span class="section-label">Notre histoire</span>
+        <h2 class="section-title">À propos de Braza 47</h2>
+        <div class="divider"></div>
+        <p class="section-text">Braza 47, c'est une restauration portugaise à Tonneins, au 3 Rue Marcel Prévost. Depuis l'ouverture, nos clients reviennent : l'accueil est sympathique et le poulet est excellent. Sauce faite maison, viande bien marinée et peau croustillante, pour un bon petit poulet du dimanche ou de la flemme en semaine. Le tout avec un bon rapport qualité prix.</p>
+        <div class="about-highlights">
+          <span class="about-tag">Cuisine maison</span>
+          <span class="about-tag">Poulet à la braise</span>
+          <span class="about-tag">Sauce maison</span>
+          <span class="about-tag">Accueil familial</span>
+          <span class="about-tag">Sur place &amp; à emporter</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="tel:+33629802179" class="cta" aria-label="Appelez Braza 47 au 06 29 80 21 79">Appelez-nous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPÉCIALITÉS -->
+<section id="specialites" aria-label="Nos spécialités portugaises">
+  <div class="container">
+    <div class="menu-header fade-in">
+      <span class="section-label">Notre cuisine</span>
+      <h2 class="section-title">Nos spécialités</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-text">Chez Braza 47, la spécialité est le poulet : viande bien marinée, peau croustillante et sauce faite maison. Une cuisine portugaise généreuse à savourer sur place ou à emporter, à Tonneins.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card fade-in">
+        <div class="menu-icon">🍗</div>
+        <h3>Poulet mariné</h3>
+        <p>Viande bien marinée, peau croustillante, cuite à la braise selon la tradition portugaise.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <div class="menu-icon">🫙</div>
+        <h3>Sauce maison</h3>
+        <p>Préparée maison, notre sauce accompagne chaque plat pour une expérience authentique et généreuse.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;" class="fade-in">
+      <a href="tel:+33629802179" class="cta" aria-label="Appelez-nous pour commander">Commander par téléphone</a>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS CLIENTS -->
+<section id="avis" aria-label="Avis de nos clients">
+  <div class="container">
+    <div class="reviews-header fade-in">
+      <span class="section-label">Témoignages</span>
+      <h2 class="section-title">Ce que disent nos clients</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-text" style="margin:0 auto;">La satisfaction de nos clients est notre plus belle récompense.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars" aria-label="Note : 5 étoiles sur 5">
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+          <span class="star" aria-hidden="true">★</span>
+        </div>
+        <p class="review-quote">On y est allés déjà 3/4 fois depuis l'ouverture. L'accueil est sympathique et le poulet est excellent. Sauce faite maison, viande bien marinée et peau croustillante, que demander de plus ?
+Je recommande, pour un bon petit poulet de dimanche ou de la flemme en semaine, c'est excellent. Sans parler du bon rapport qualité prix ! 🍗😊</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">M</div>
+          <div class="review-meta">
+            <strong>mariana elias</strong>
+            <span>il y a un an</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;" class="fade-in">
+      <p style="font-size:0.95rem; opacity:0.7; margin-bottom:1rem;">Note Google : <strong style="color:var(--primary);">4,0 / 5</strong> — 4 avis clients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie" aria-label="Galerie photos de Braza 47">
+  <div class="container">
+    <div class="gallery-header fade-in">
+      <span class="section-label">En images</span>
+      <h2 class="section-title">Découvrez Braza 47</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-text" style="margin:0 auto;">Découvrez l'ambiance et les plats de Braza 47, restauration portugaise à Tonneins.</p>
+    </div>
+    <div class="carousel-wrap fade-in" aria-label="Carrousel de photos">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide corner-frame">
+          <img src="assets/gallery-1.jpg" alt="Plats et ambiance chez Braza 47 à Tonneins" loading="lazy">
+        </div>
+        <div class="carousel-slide corner-frame">
+          <img src="assets/gallery-2.jpg" alt="Poulet portugais grillé à la braise chez Braza 47" loading="lazy">
+        </div>
+        <div class="carousel-slide corner-frame">
+          <img src="assets/hero.jpg" alt="Braza 47, restaurant portugais convivial à Tonneins" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls" aria-label="Contrôles du carrousel">
+      <button class="carousel-btn" id="carouselPrev" aria-label="Image précédente">&#8592;</button>
+      <div class="carousel-dots" id="carouselDots" role="list"></div>
+      <button class="carousel-btn" id="carouselNext" aria-label="Image suivante">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- HORAIRES & ADRESSE -->
+<section id="horaires" aria-label="Horaires et adresse de Braza 47">
+  <div class="container">
+    <div class="fade-in" style="text-align:center; margin-bottom:3rem;">
+      <span class="section-label">Nous trouver</span>
+      <h2 class="section-title">Horaires et adresse</h2>
+      <div class="divider divider-center"></div>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-block fade-in">
+        <h3>Nos horaires d'ouverture</h3>
+        <table class="hours-table" aria-label="Horaires d'ouverture de Braza 47">
+          <tbody>
+            <tr><td>Lundi</td><td>17:00 – 21:00</td></tr>
+            <tr><td>Mardi</td><td>17:00 – 21:00</td></tr>
+            <tr><td>Mercredi</td><td>17:00 – 21:00</td></tr>
+            <tr><td>Jeudi</td><td>17:00 – 21:00</td></tr>
+            <tr><td>Vendredi</td><td>17:00 – 21:00</td></tr>
+            <tr><td>Samedi</td><td>08:00 – 14:00, 17:00 – 21:00</td></tr>
+            <tr><td>Dimanche</td><td>08:00 – 14:00, 17:00 – 21:00</td></tr>
+          </tbody>
+        </table>
+        <div class="address-block" style="margin-top:2rem;">
+          <p><strong>Adresse :</strong> 3 Rue Marcel Prévost, 47400 Tonneins, France</p>
+          <p style="margin-top:0.5rem;"><strong>Téléphone :</strong> <a href="tel:+33629802179" class="phone-link" aria-label="Appeler Braza 47">06 29 80 21 79</a></p>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="tel:+33629802179" class="cta" aria-label="Appelez-nous pour réserver">Appelez-nous</a>
+        </div>
+      </div>
+      <div class="fade-in">
+        <div class="map-wrap" aria-label="Carte Google Maps de Braza 47 à Tonneins">
+          <iframe
+            src="https://www.google.com/maps?q=3+Rue+Marcel+Pr%C3%A9vost,+47400+Tonneins,+France&output=embed"
+            title="Localisation de Braza 47 - 3 Rue Marcel Prévost, 47400 Tonneins"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE DE CONTACT -->
+<section id="contact" aria-label="Formulaire de contact Braza 47">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <span class="section-label">Contactez-nous</span>
+        <h2 class="section-title">Nous contacter</h2>
+        <div class="divider"></div>
+        <p>Une question, une commande ? Écrivez-nous ou appelez-nous directement.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">📍</div>
+          <div class="contact-detail-text">
+            <strong>Adresse</strong>
+            <span>3 Rue Marcel Prévost, 47400 Tonneins, France</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">📞</div>
+          <div class="contact-detail-text">
+            <strong>Téléphone</strong>
+            <span><a href="tel:+33629802179" class="phone-link" aria-label="Appeler Braza 47 au 06 29 80 21 79">06 29 80 21 79</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+          <div class="contact-detail-text">
+            <strong>Horaires</strong>
+            <span>Lun–Ven : 17h–21h | Sam–Dim : 8h–14h &amp; 17h–21h</span>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="tel:+33629802179" class="cta" aria-label="Appelez-nous directement">Appelez-nous</a>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <h3>Envoyez-nous un message</h3>
+        <form action="https://checkout.kamkod.com/contact" method="POST" aria-label="Formulaire de contact Braza 47">
+          <input type="hidden" name="lead_id" value="ChIJAV4LPzlfqhIR-Obr4rtymkA">
+          <div class="form-group">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" placeholder="Prénom et nom" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Votre adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemple@email.fr" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" placeholder="Votre question, commande ou demande..." required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="cta form-submit" aria-label="Envoyer votre message à Braza 47">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SIGNALS -->
+<section id="confiance" aria-label="Pourquoi choisir Braza 47">
+  <div class="container">
+    <div class="trust-header fade-in">
+      <span class="section-label" style="color:rgba(255,255,255,0.7);">Nos engagements</span>
+      <h2 class="section-title">Pourquoi Braza 47</h2>
+      <div class="divider divider-center" style="background:linear-gradient(90deg,#fff,rgba(255,255,255,0.4));"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🍳</div>
+        <p>Cuisine maison préparée sur place</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🔥</div>
+        <p>Spécialités portugaises à la braise</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🥗</div>
+        <p>Produits frais sélectionnés</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">🤝</div>
+        <p>Accueil convivial et familial</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">💳</div>
+        <p>Paiement par carte bancaire accepté</p>
+      </div>
+      <div class="trust-item fade-in">
+        <div class="trust-icon" aria-hidden="true">☀️</div>
+        <p>Terrasse ombragée disponible</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer aria-label="Pied de page Braza 47">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo">Braza <span>47</span></span>
+      <p>Braza 47 - Restauration Portugaise — 3 Rue Marcel Prévost, 47400 Tonneins, France. Téléphone : 06 29 80 21 79.</p>
+      <div class="footer-cta">
+        <a href="tel:+33629802179" class="cta" aria-label="Appelez Braza 47 au 06 29 80 21 79">Appelez-nous</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#specialites">Nos spécialités</a></li>
+        <li><a href="#avis">Avis clients</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#horaires">Horaires et accès</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="#horaires">3 Rue Marcel Prévost</a></li>
+        <li><a href="#horaires">47400 Tonneins, France</a></li>
+        <li><a href="tel:+33629802179">06 29 80 21 79</a></li>
+        <li><a href="#horaires">Lun–Ven : 17h–21h</a></li>
+        <li><a href="#horaires">Sam–Dim : 8h–14h &amp; 17h–21h</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Braza 47 - Restauration Portugaise. Tous droits réservés.</p>
+    <a href="#mentions-legales" aria-label="Mentions légales">Mentions légales</a>
+  </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button id="scrollTop" aria-label="Retour en haut de page">&#8593;</button>
+
+<script>
+  // ===== BURGER MENU =====
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  navMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ===== FADE IN OBSERVER =====
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(function(el) { observer.observe(el); });
+
+  // ===== CAROUSEL =====
+  (function() {
+    var track = document.getElementById('carouselTrack');
+    var dotsContainer = document.getElementById('carouselDots');
+    var prevBtn = document.getElementById('carouselPrev');
+    var nextBtn = document.getElementById('carouselNext');
+
+    if (!track) return;
+
+    var slides = track.querySelectorAll('.carousel-slide');
+    var total = slides.length;
+    var current = 0;
+    var autoTimer = null;
+
+    function getSlidesPerView() {
+      return window.innerWidth >= 768 ? 2 : 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, total - getSlidesPerView());
+    }
+
+    function getSlideWidth() {
+      var spv = getSlidesPerView();
+      var gap = 1.25 * 16;
+      var containerWidth = track.parentElement.offsetWidth;
+      return (containerWidth - gap * (spv - 1)) / spv;
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      var max = getMaxIndex();
+      for (var i = 0; i <= max; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === current ? ' active' : '');
+        dot.setAttribute('aria-label', 'Aller à l\'image ' + (i + 1));
+        dot.setAttribute('role', 'listitem');
+        (function(idx) {
+          dot.addEventListener('click', function() { goTo(idx); });
+        })(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      var dots = dotsContainer.querySelectorAll('.carousel-dot');
+      dots.forEach(function(d, i) {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(idx) {
+      var max = getMaxIndex();
+      current = Math.max(0, Math.min(idx, max));
+      var slideW = getSlideWidth();
+      var gap = 1.25 * 16;
+      var offset = current * (slideW + gap);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      updateDots();
+    }
+
+    function next() { goTo(current >= getMaxIndex() ? 0 : current + 1); }
+    function prev() { goTo(current <= 0 ? getMaxIndex() : current - 1); }
+
+    prevBtn.addEventListener('click', function() { prev(); resetAuto(); });
+    nextBtn.addEventListener('click', function() { next(); resetAuto(); });
+
+    function startAuto() {
+      autoTimer = setInterval(function() { next(); }, 4000);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    buildDots();
+    goTo(0);
+    startAuto();
+
+    window.addEventListener('resize', function() {
+      buildDots();
+      goTo(Math.min(current, getMaxIndex()));
+    });
+
+    // Touch support
+    var touchStartX = 0;
+    track.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) next(); else prev();
+        resetAuto();
+      }
+    }, { passive: true });
+  })();
+
+  // ===== SCROLL TOP =====
+  var scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+  scrollTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<!-- KAMKOD:DEMO_START -->
+<script>
+(function(){
+  var URL = 'https://checkout.kamkod.com/d/ChIJAV4LPzlfqhIR-Obr4rtymkA';
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('a, button, [role="button"]');
+    if(!el || el.closest('form')) return;               /* formulaire -> endpoint contact */
+    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
+    if(el.closest('header nav, nav')) return;           /* navigation interne de la démo */
+    var a = e.target.closest('a');
+    if(!a) return;                                      /* bouton seul hors nav: on laisse */
+    var href = a.getAttribute('href') || '';
+    if(href.charAt(0) === '#') return;                  /* ancres de section */
+    if(/^https?:|^\/\//i.test(href)) return;
+    e.preventDefault(); window.location.href = URL;     /* tel:, mailto:, javascript:… */
+  }, true);
+})();
+</script>
+<div id="kamkod-demo-banner" data-pid="ChIJAV4LPzlfqhIR-Obr4rtymkA" data-echeance="1790788015352"
+     style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 -2px 14px rgba(0,0,0,.4);">
+  <div style="max-width:920px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;">
+    <span style="flex:1;min-width:200px;font-size:13px;opacity:.8;">Aperçu de votre futur site</span>
+    <span id="kk-offre" style="font-size:14px;font-variant-numeric:tabular-nums;">Prix de lancement : <b>49,00 €</b> — encore 47h 59min 59s</span>
+    <a href="https://checkout.kamkod.com/d/ChIJAV4LPzlfqhIR-Obr4rtymkA" style="background:#EA580C;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;">Activer mon site</a>
+  </div>
+</div>
+<script>
+/* COMPTE À REBOURS DE LA BANNIÈRE (demande Alex 11/09) : le prospect passe le plus
+   de temps SUR SON SITE — l'urgence doit être ici, pas seulement sur la page de
+   vente après un clic de plus. Même mécanique que la page : fenêtre 48 h, prix de
+   lancement, et le prix plein annoncé une fois la fenêtre passée.
+   L'échéance est EMBARQUÉE à l'injection (aucune dépendance réseau) puis
+   resynchronisée depuis /api/offre toutes les 2 min (une réinitialisation de
+   fenêtre doit se propager à un site déjà déployé). */
+(function(){
+  var b = document.getElementById('kamkod-demo-banner');
+  if(!b) return;
+  var ach = parseInt(b.getAttribute('data-echeance') || '0', 10);
+  var pid = b.getAttribute('data-pid');
+  var el  = document.getElementById('kk-offre');
+  if(!el) return;
+  var T_LAUNCH = "Prix de lancement : <b>%PRIX%</b> — encore %TEMPS%";
+  var T_OVER   = "Le déploiement est passé à <b>%PRIX%</b>";
+  var PRIX_L   = "49,00 €";
+  var PRIX_O   = "98,00 €";
+  function deux(n){ return (n < 10 ? '0' : '') + n; }
+  function hms(s){
+    var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+    return h + 'h ' + deux(m) + 'min ' + deux(x) + 's';
+  }
+  function rendu(){
+    var s = ach ? Math.floor((ach - Date.now()) / 1000) : 0;
+    if(s > 0){
+      el.innerHTML = T_LAUNCH.replace('%TEMPS%', hms(s)).replace('%PRIX%', PRIX_L);
+    } else {
+      el.innerHTML = T_OVER.replace('%PRIX%', PRIX_O);
+    }
+  }
+  rendu();
+  setInterval(rendu, 1000);
+  function sync(){
+    try{
+      fetch('https://checkout.kamkod.com/api/offre/' + pid, {cache:'no-store'})
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if(d && d.echeance_ms){ ach = d.echeance_ms; }
+          if(d && d.prix_lancement){ PRIX_L = d.prix_lancement; }
+          if(d && d.prix_apres){ PRIX_O = d.prix_apres; }
+          rendu();
+        })
+        .catch(function(){});
+    }catch(e){}
+  }
+  setTimeout(sync, 5000);
+  setInterval(sync, 120000);
+})();
+</script>
+<script>
+/* KAMKOD-MESURE v1 — page="site" | mesure agrégée : aucun cookie, aucun identifiant. */
+(function(){
+  try{
+    var PID="ChIJAV4LPzlfqhIR-Obr4rtymkA", PAGE="site";
+    var URL="https://checkout.kamkod.com/api/comportement/"+PID;
+    var vis=0, lastIn=Date.now(), scrollMax=0, clics=0, cta=0, premier=1, vues={};
+    var mobile=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent||'');
+    function cache(){ return document.visibilityState==='hidden'; }
+    function temps(){ var n=Date.now(); if(!cache() && lastIn){ vis+=n-lastIn; } lastIn=n; }
+    function majScroll(){
+      var h=Math.max(1,(document.documentElement.scrollHeight||0)-window.innerHeight);
+      var p=Math.round(Math.min(100,((window.pageYOffset||window.scrollY||0)/h)*100));
+      if(p>scrollMax){ scrollMax=p; }
+    }
+    function majSections(){
+      var hs=document.querySelectorAll('h1,h2,h3');
+      for(var i=0;i<hs.length && i<40;i++){
+        var r=hs[i].getBoundingClientRect();
+        if(r.top<window.innerHeight && r.bottom>0){
+          var t=(hs[i].textContent||'').replace(/\s+/g,' ').trim().slice(0,60);
+          if(t){ vues[t]=(vues[t]||0)+1; }
+        }
+      }
+    }
+    function estCta(el){ var a=null,n=el;while(n&&n.tagName!=='A'){n=n.parentNode;}
+      a=n;if(!a||!a.getAttribute)return false;
+      var h=a.getAttribute('href')||'';
+      return h.indexOf('/d/')>-1||h.indexOf('checkout.kamkod.com')>-1; }
+    function envoi(force){
+      try{
+        temps();
+        var secs=Object.keys(vues);
+        if(!force && !secs.length && !vis && !clics && !scrollMax){ return; }
+        var corps=JSON.stringify({v:1, page:PAGE, debut:premier?1:0, temps_ms:Math.round(vis),
+          scroll_max:scrollMax, clics:clics, cta_clics:cta, mobile:mobile, sections:secs});
+        var ok=false;
+        try{
+          if(navigator.sendBeacon){ ok=navigator.sendBeacon(URL, corps); }
+          if(!ok){
+            var x=new XMLHttpRequest();
+            x.open('POST',URL,true);
+            x.setRequestHeader('Content-Type','text/plain;charset=UTF-8');
+            x.send(corps); ok=true;
+          }
+        }catch(e){}
+        if(ok){ premier=0; vis=0; clics=0; cta=0; vues={}; }
+      }catch(e){}
+    }
+    window.addEventListener('scroll',function(){try{majScroll();majSections();}catch(e){}},{passive:true});
+    document.addEventListener('click',function(ev){
+      try{ clics++; if(estCta(ev.target)){ cta++; } }catch(e){}
+    },true);
+    document.addEventListener('visibilitychange',function(){
+      try{ if(cache()){ envoi(false); } else { lastIn=Date.now(); } }catch(e){}
+    });
+    window.addEventListener('pagehide',function(){try{envoi(true);}catch(e){}});
+    setTimeout(function(){try{majScroll();majSections();envoi(false);}catch(e){}},3000);
+    setInterval(function(){try{majSections();envoi(false);}catch(e){}},30000);
+  }catch(e){}
+})();
+</script>
+<!-- KAMKOD:DEMO_END -->
+</body>
+</html>
